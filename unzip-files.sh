@@ -31,11 +31,14 @@ unzip -j -o ../../../${DEVICE}_update.zip system/lib/hw/lights.sun4i.so -d ../..
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/hw/sensors.exDroid.so -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libMali.so -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libUMP.so -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/modules/8192cu.ko -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/modules/bma250.ko -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/modules/ft5x_ts.ko -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/modules/gc0308.ko -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/modules/goodix_touch.ko -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/modules/gt2005.ko -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/modules/mali.ko -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/modules/mma7660.ko -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/modules/nano_if.ko -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/modules/nano_ksdio.ko -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/modules/sun4i-ir.ko -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
@@ -46,10 +49,8 @@ unzip -j -o ../../../${DEVICE}_update.zip system/lib/modules/ump.ko -d ../../../
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/modules/videobuf-core.ko -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/modules/videobuf-dma-contig.ko -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/modules/x_mac.axf -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
+unzip -j -o ../../../${DEVICE}_update.zip system/usr/idc/ft5x_ts.idc -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/usr/idc/gt80x.idc -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
-unzip -j -o ../../../${DEVICE}_update.zip system/usr/keylayout/hv_keypad.kl -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
-unzip -j -o ../../../${DEVICE}_update.zip system/usr/keylayout/sun4i-ir.kl -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
-unzip -j -o ../../../${DEVICE}_update.zip system/usr/keylayout/sun4i-keyboard.kl -d ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__MANUFACTURER__/$MANUFACTURER/g > ../../../vendor/$MANUFACTURER/$DEVICE/device-vendor-blobs.mk
 # Copyright (C) 2010 The Android Open Source Project
@@ -85,11 +86,14 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/sensors.exDroid.so:system/lib/hw/sensors.exDroid.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libMali.so:system/lib/libMali.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libUMP.so:system/lib/libUMP.so \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/8192cu.ko:system/lib/modules/8192cu.ko \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/bma250.ko:system/lib/modules/bma250.ko \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/ft5x_ts.ko:system/lib/modules/ft5x_ts.ko \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/gc0308.ko:system/lib/modules/gc0308.ko \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/goodix_touch.ko:system/lib/modules/goodix_touch.ko \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/gt2005.ko:system/lib/modules/gt2005.ko \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/mali.ko:system/lib/modules/mali.ko \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/mma7660.ko:system/lib/modules/mma7660.ko \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/nano_if.ko:system/lib/modules/nano_if.ko \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/nano_ksdio.ko:system/lib/modules/nano_ksdio.ko \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/sun4i-ir.ko:system/lib/modules/sun4i-ir.ko \\
@@ -100,10 +104,8 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/videobuf-core.ko:system/lib/modules/videobuf-core.ko \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/videobuf-dma-contig.ko:system/lib/modules/videobuf-dma-contig.ko \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/x_mac.axf:system/lib/modules/x_mac.axf \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/gt80x.idc:system/usr/idc/gt80x.idc \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/hv_keypad.kl:system/usr/keylayout/hv_keypad.kl \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/sun4i-ir.kl:system/usr/keylayout/sun4i-ir.kl \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/sun4i-keyboard.kl:system/usr/keylayout/sun4i-keyboard.kl
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/ft5x_ts.idc:system/usr/idc/ft5x_ts.idc \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/gt80x.idc:system/usr/idc/gt80x.idc
 
 # All the apks necessary for a10
 #PRODUCT_PACKAGES += \\

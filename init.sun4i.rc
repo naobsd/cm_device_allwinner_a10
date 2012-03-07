@@ -38,10 +38,13 @@ on fs
 	#chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
 	#chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
 
+	insmod /system/lib/modules/8192cu.ko
 	insmod /system/lib/modules/bma250.ko
+	insmod /system/lib/modules/ft5x_ts.ko
 	insmod /system/lib/modules/gc0308.ko
 	insmod /system/lib/modules/goodix_touch.ko
 	insmod /system/lib/modules/gt2005.ko
+	insmod /system/lib/modules/mma7660.ko
 	insmod /system/lib/modules/nano_if.ko nrx_config=/system/lib/modules
 	insmod /system/lib/modules/nano_ksdio.ko
 	insmod /system/lib/modules/sun4i-ir.ko

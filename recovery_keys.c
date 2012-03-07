@@ -13,10 +13,12 @@ int device_handle_key(int key_code, int visible) {
     if (visible) {
         switch (key_code) {
             case KEY_3:
+            case KEY_ENTER:
             case KEY_SEARCH:
                 return HIGHLIGHT_DOWN;
 
             case KEY_4:
+            case KEY_HOME:
             case KEY_MENU:
                 return HIGHLIGHT_UP;
 

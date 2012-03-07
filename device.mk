@@ -57,7 +57,10 @@ PRODUCT_PACKAGES += \
 	librs_jni
 
 # Key maps
-#PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
+	device/allwinner/a10/prebuilt/hv_keypad.kl:system/usr/keylayout/hv_keypad.kl \
+	device/allwinner/a10/prebuilt/sun4i-ir.kl:system/usr/keylayout/sun4i-ir.kl \
+	device/allwinner/a10/prebuilt/sun4i-keyboard.kl:system/usr/keylayout/sun4i-keyboard.kl
 
 # Input device calibration files
 #PRODUCT_COPY_FILES += \

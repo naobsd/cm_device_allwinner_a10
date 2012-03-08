@@ -20,9 +20,6 @@ on post-fs-data
 on boot
 	mount debugfs /sys/kernel/debug /sys/kernel/debug
 
-	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor conservative
-	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
-
 on fs
 	mount ext4 /dev/block/nandd /system wait ro
 	setprop ro.crypto.tmpfs_options size=128m,mode=0771,uid=1000,gid=1000

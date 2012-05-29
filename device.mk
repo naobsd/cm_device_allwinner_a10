@@ -84,7 +84,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	hwui.render_dirty_regions=false \
-	qemu.sf.lcd_density=160
+	qemu.sf.lcd_density=160 \
+	ro.vold.switchablepair=/mnt/sdcard,/mnt/nand
 
 PRODUCT_CHARACTERISTICS := tablet
 

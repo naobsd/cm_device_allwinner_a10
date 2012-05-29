@@ -30,6 +30,7 @@ PRODUCT_PACKAGES := \
 PRODUCT_COPY_FILES := \
 	$(LOCAL_KERNEL):kernel \
 	device/allwinner/a10/init.sun4i.rc:root/init.sun4i.rc \
+	device/allwinner/a10/init.sun4i.usb.rc:root/init.sun4i.usb.rc \
 	device/allwinner/a10/ueventd.sun4i.rc:root/ueventd.sun4i.rc \
 	device/allwinner/a10/etc/vold.fstab:system/etc/vold.fstab \
 	device/allwinner/a10/etc/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
@@ -46,8 +47,8 @@ PRODUCT_PROPERTY_OVERRIDES := \
 	wifi.supplicant_scan_interval=15
 
 # Set default USB interface
-#PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-#	persist.sys.usb.config=mtp
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+	persist.sys.usb.config=mtp
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \

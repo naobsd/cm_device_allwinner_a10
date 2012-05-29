@@ -14,5 +14,5 @@
 # limitations under the License.
 #
 
-add_lunch_combo full_a10-userdebug
-add_lunch_combo cm_a10-userdebug
+add_lunch_combo full_a10gb-userdebug
+add_lunch_combo cm_a10gb-userdebug

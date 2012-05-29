@@ -14,8 +14,8 @@
 
 ## Example of a standard sdcard mount for the emulator / Dream
 # Mounts the first usable partition of the specified device
-dev_mount sdcard /mnt/sdcard auto /devices/platform/sunxi-mmc
-dev_mount nand /mnt/nand auto /devices/virtual/block/nandi
+dev_mount sdcard /mnt/sdcard auto /devices/platform/awsmc
+dev_mount nand /mnt/nand auto /devices/virtual/block/nandh
 dev_mount usb /mnt/usb auto /devices/platform/sw-ehci /devices/platform/sw_hcd_host0
 
 ## Example of a dual card setup

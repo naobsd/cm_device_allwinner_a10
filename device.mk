@@ -15,12 +15,12 @@
 #
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/allwinner/a10/kernel
+LOCAL_KERNEL := device/allwinner/a10gb/kernel
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
-DEVICE_PACKAGE_OVERLAYS := device/allwinner/a10/overlay
+DEVICE_PACKAGE_OVERLAYS := device/allwinner/a10gb/overlay
 
 PRODUCT_PACKAGES := \
 	audio.a2dp.default \
@@ -29,13 +29,13 @@ PRODUCT_PACKAGES := \
 
 PRODUCT_COPY_FILES := \
 	$(LOCAL_KERNEL):kernel \
-	device/allwinner/a10/init.sun4i.rc:root/init.sun4i.rc \
-	device/allwinner/a10/init.sun4i.usb.rc:root/init.sun4i.usb.rc \
-	device/allwinner/a10/ueventd.sun4i.rc:root/ueventd.sun4i.rc \
-	device/allwinner/a10/etc/vold.fstab:system/etc/vold.fstab \
-	device/allwinner/a10/etc/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-	device/allwinner/a10/prebuilt/install-recovery.sh:system/bin/install-recovery.sh \
-	device/allwinner/a10/prebuilt/reboot-recovery.sh:system/bin/reboot-recovery.sh
+	device/allwinner/a10gb/init.sun4i.rc:root/init.sun4i.rc \
+	device/allwinner/a10gb/init.sun4i.usb.rc:root/init.sun4i.usb.rc \
+	device/allwinner/a10gb/ueventd.sun4i.rc:root/ueventd.sun4i.rc \
+	device/allwinner/a10gb/etc/vold.fstab:system/etc/vold.fstab \
+	device/allwinner/a10gb/etc/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+	device/allwinner/a10gb/prebuilt/install-recovery.sh:system/bin/install-recovery.sh \
+	device/allwinner/a10gb/prebuilt/reboot-recovery.sh:system/bin/reboot-recovery.sh
 
 # Bluetooth configuration files
 #PRODUCT_COPY_FILES += \
@@ -48,7 +48,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp
+	persist.sys.usb.config=mass_storage
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
@@ -59,9 +59,9 @@ PRODUCT_PACKAGES += \
 
 # Key maps
 PRODUCT_COPY_FILES += \
-	device/allwinner/a10/prebuilt/hv_keypad.kl:system/usr/keylayout/hv_keypad.kl \
-	device/allwinner/a10/prebuilt/sun4i-ir.kl:system/usr/keylayout/sun4i-ir.kl \
-	device/allwinner/a10/prebuilt/sun4i-keyboard.kl:system/usr/keylayout/sun4i-keyboard.kl
+	device/allwinner/a10gb/prebuilt/hv_keypad.kl:system/usr/keylayout/hv_keypad.kl \
+	device/allwinner/a10gb/prebuilt/sun4i-ir.kl:system/usr/keylayout/sun4i-ir.kl \
+	device/allwinner/a10gb/prebuilt/sun4i-keyboard.kl:system/usr/keylayout/sun4i-keyboard.kl
 
 # Input device calibration files
 #PRODUCT_COPY_FILES += \
@@ -108,4 +108,4 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 
-$(call inherit-product-if-exists, vendor/allwinner/a10/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/allwinner/a10gb/device-vendor.mk)

@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE=a10
+DEVICE=a10gb
 MANUFACTURER=allwinner
 
 mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE

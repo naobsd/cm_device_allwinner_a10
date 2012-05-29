@@ -9,7 +9,10 @@ on early-init
 	mkdir /mnt/nand 0000 system system
 	mkdir /mnt/usb 0000 system system
 
+	insmod /lib/modules/disp.ko
 	insmod /lib/modules/hv2605.ko
+	insmod /lib/modules/lcd.ko
+	insmod /lib/modules/sun4i-keyboard.ko
 
 on post-fs-data
 	mkdir /data/misc/wifi 0770 wifi wifi
@@ -23,10 +26,10 @@ on boot
 	mount debugfs /sys/kernel/debug /sys/kernel/debug
 
 on fs
-	mount ext4 /dev/block/nandd /system wait ro
+	mount ext4 /dev/block/nandc /system wait ro
 	setprop ro.crypto.tmpfs_options size=128m,mode=0771,uid=1000,gid=1000
-	mount ext4 /dev/block/nande /data wait noatime nosuid nodev
-	mount ext4 /dev/block/nandh /cache wait noatime nosuid nodev
+	mount ext4 /dev/block/nandd /data wait noatime nosuid nodev
+	mount ext4 /dev/block/nandg /cache wait noatime nosuid nodev
 
 # permissions for bluetooth.
 	#setprop ro.bt.bdaddr_path 
@@ -43,6 +46,7 @@ on fs
 	insmod /system/lib/modules/gc0308.ko
 	insmod /system/lib/modules/goodix_touch.ko
 	insmod /system/lib/modules/gt2005.ko
+	insmod /system/lib/modules/hdmi.ko
 	insmod /system/lib/modules/mma7660.ko
 	insmod /system/lib/modules/nano_if.ko nrx_config=/system/lib/modules
 	insmod /system/lib/modules/nano_ksdio.ko
@@ -58,7 +62,7 @@ on fs
 	chown system system /sys/class/timed_output/sun4i-vibrator/enable
 
 # create filesystems if necessary
-service setup_fs /system/bin/setup_fs /dev/block/nande /dev/block/nandh
+service setup_fs /system/bin/setup_fs /dev/block/nandd /dev/block/nandg
 	class core
 	user root
 	group root

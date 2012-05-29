@@ -18,11 +18,11 @@ PRODUCT_PACKAGES := \
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-# Inherit from a10 device
-$(call inherit-product, device/allwinner/a10/device.mk)
+# Inherit from a10gb device
+$(call inherit-product, device/allwinner/a10gb/device.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_a10
-PRODUCT_DEVICE := a10
+PRODUCT_NAME := full_a10gb
+PRODUCT_DEVICE := a10gb
 PRODUCT_BRAND := Allwinner
-PRODUCT_MODEL := Full AOSP on A10
+PRODUCT_MODEL := Full AOSP on A10GB

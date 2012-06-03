@@ -25,7 +25,8 @@ DEVICE_PACKAGE_OVERLAYS := device/allwinner/a10/overlay
 PRODUCT_PACKAGES := \
 	audio.a2dp.default \
 	libaudioutils \
-	libtinyalsa
+	libtinyalsa \
+	setrecovery
 
 PRODUCT_COPY_FILES := \
 	$(LOCAL_KERNEL):kernel \
@@ -34,8 +35,7 @@ PRODUCT_COPY_FILES := \
 	device/allwinner/a10/ueventd.sun4i.rc:root/ueventd.sun4i.rc \
 	device/allwinner/a10/etc/vold.fstab:system/etc/vold.fstab \
 	device/allwinner/a10/etc/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-	device/allwinner/a10/prebuilt/install-recovery.sh:system/bin/install-recovery.sh \
-	device/allwinner/a10/prebuilt/reboot-recovery.sh:system/bin/reboot-recovery.sh
+	device/allwinner/a10/prebuilt/install-recovery.sh:system/bin/install-recovery.sh
 
 # Bluetooth configuration files
 #PRODUCT_COPY_FILES += \

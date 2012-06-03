@@ -32,9 +32,6 @@ on boot
 service ueventd /sbin/ueventd
     critical
 
-service erase_misc /sbin/sh -c "dd if=/dev/zero count=1 | tr '\000' '\377' > /dev/block/nandf; sync"
-    oneshot
-
 service recovery /sbin/recovery
 
 service adbd /sbin/adbd recovery

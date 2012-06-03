@@ -81,6 +81,6 @@ BOARD_USE_LEGACY_TOUCHSCREEN := true
 #BOARD_USES_AUDIO_LEGACY := true
 #TARGET_USES_OLD_LIBSENSORS_HAL := true
 #TARGET_SENSORS_NO_OPEN_CHECK := true
-#TARGET_USE_CUSTOM_LUN_FILE_PATH := ""
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
 
 TARGET_USES_CUSTOM_VIBRATOR_PATH := "/sys/class/timed_output/sun4i-vibrator/enable"

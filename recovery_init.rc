@@ -1,8 +1,6 @@
 on early-init
     start ueventd
 
-    insmod /lib/modules/hv2605.ko
-
 on init
     export PATH /sbin
     export ANDROID_ROOT /system

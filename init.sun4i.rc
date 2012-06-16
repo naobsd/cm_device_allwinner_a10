@@ -9,8 +9,6 @@ on early-init
 	mkdir /mnt/nand 0000 system system
 	mkdir /mnt/usb 0000 system system
 
-	insmod /lib/modules/hv2605.ko
-
 on post-fs-data
 	mkdir /data/misc/wifi 0770 wifi wifi
 	mkdir /data/misc/wifi/sockets 0770 wifi wifi
@@ -43,6 +41,7 @@ on fs
 	insmod /system/lib/modules/gc0308.ko
 	insmod /system/lib/modules/goodix_touch.ko
 	insmod /system/lib/modules/gt2005.ko
+	insmod /system/lib/modules/hv2605.ko
 	insmod /system/lib/modules/mma7660.ko
 	insmod /system/lib/modules/nano_if.ko nrx_config=/system/lib/modules
 	insmod /system/lib/modules/nano_ksdio.ko

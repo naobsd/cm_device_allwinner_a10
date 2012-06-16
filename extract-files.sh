@@ -20,7 +20,6 @@ DEVICE=a10
 MANUFACTURER=allwinner
 
 mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
-adb pull /lib/modules/hv2605.ko ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/hv2605.ko
 adb pull /system/lib/egl/libEGL_mali.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libEGL_mali.so
 adb pull /system/lib/egl/libGLESv1_CM_mali.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libGLESv1_CM_mali.so
 adb pull /system/lib/egl/libGLESv2_mali.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libGLESv2_mali.so
@@ -37,6 +36,7 @@ adb pull /system/lib/modules/ft5x_ts.ko ../../../vendor/$MANUFACTURER/$DEVICE/pr
 adb pull /system/lib/modules/gc0308.ko ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/gc0308.ko
 adb pull /system/lib/modules/goodix_touch.ko ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/goodix_touch.ko
 adb pull /system/lib/modules/gt2005.ko ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/gt2005.ko
+adb pull /system/lib/modules/hv2605.ko ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/hv2605.ko
 adb pull /system/lib/modules/mali.ko ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/mali.ko
 adb pull /system/lib/modules/mma7660.ko ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/mma7660.ko
 adb pull /system/lib/modules/nano_if.ko ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/nano_if.ko
@@ -75,7 +75,6 @@ adb pull /system/usr/idc/gt80x.idc ../../../vendor/$MANUFACTURER/$DEVICE/proprie
 
 # All the blobs necessary for a10
 PRODUCT_COPY_FILES += \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/hv2605.ko:root/lib/modules/hv2605.ko \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libEGL_mali.so:system/lib/egl/libEGL_mali.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libGLESv1_CM_mali.so:system/lib/egl/libGLESv1_CM_mali.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libGLESv2_mali.so:system/lib/egl/libGLESv2_mali.so \\
@@ -92,6 +91,7 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/gc0308.ko:system/lib/modules/gc0308.ko \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/goodix_touch.ko:system/lib/modules/goodix_touch.ko \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/gt2005.ko:system/lib/modules/gt2005.ko \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/hv2605.ko:system/lib/modules/hv2605.ko \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/mali.ko:system/lib/modules/mali.ko \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/mma7660.ko:system/lib/modules/mma7660.ko \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/nano_if.ko:system/lib/modules/nano_if.ko \\

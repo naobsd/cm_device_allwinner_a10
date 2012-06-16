@@ -24,6 +24,7 @@ DEVICE_PACKAGE_OVERLAYS := device/allwinner/a10/overlay
 
 PRODUCT_PACKAGES := \
 	audio.a2dp.default \
+	dispctl \
 	libaudioutils \
 	libtinyalsa \
 	setrecovery

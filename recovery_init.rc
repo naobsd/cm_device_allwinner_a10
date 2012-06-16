@@ -30,6 +30,9 @@ on boot
 service ueventd /sbin/ueventd
     critical
 
+service dispctl /sbin/dispctl
+    oneshot
+
 service recovery /sbin/recovery
 
 service adbd /sbin/adbd recovery

@@ -27,6 +27,7 @@ int device_handle_key(int key_code, int visible) {
             case KEY_LEFT:
             case KEY_POWER:
             case BTN_LEFT:
+            /*case BTN_TOUCH:*/
                 return SELECT_ITEM;
             
             case KEY_ESC:

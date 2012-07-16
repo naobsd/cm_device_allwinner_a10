@@ -1,6 +1,8 @@
 on early-init
     start ueventd
 
+    insmod /ts.ko
+
 on init
     export PATH /sbin
     export ANDROID_ROOT /system

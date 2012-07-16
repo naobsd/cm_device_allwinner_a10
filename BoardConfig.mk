@@ -41,8 +41,8 @@ TARGET_BOARD_PLATFORM := exDroid
 TARGET_BOOTLOADER_BOARD_NAME := crane
 
 BOARD_EGL_CFG := device/allwinner/a10/egl.cfg
-
 USE_OPENGL_RENDERER := true
+ENABLE_WEBGL := true
 
 BOARD_USE_SKIA_LCDTEXT := true
 
